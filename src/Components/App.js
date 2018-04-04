@@ -16,8 +16,8 @@ class App extends React.Component {
             <Fragment>
                 <TodoFormAdd />
                 <TodoListAdd handleUpdate={this.handleUpdate}/>
-                <TodoSorting />
                 <TodoFilterering />
+                <TodoSorting />
             </Fragment>
         );
     }

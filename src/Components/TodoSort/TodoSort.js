@@ -12,8 +12,8 @@ class TodoFormFilter extends React.Component{
     render() {
         return (
             <div className="row justify-content-center">
-                <button onClick={this.handleClickUp} style={{display:"inline-block"}}>SortUp todos</button>
-                <button onClick={this.handleClickDown} style={{display:"inline-block"}}>SortDown todos</button>
+                <button onClick={this.handleClickUp} className="btn btn-success">SortUp todos</button>
+                <button onClick={this.handleClickDown} className="btn btn-danger">SortDown todos</button>
             </div>
         );  
     }
