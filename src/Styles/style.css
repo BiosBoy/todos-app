@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+/* RESET START */
+/* *{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  body{
+    height:100%;
+    margin: 0;
+    color: #111;
+    font-family: 'Raleway', sans-serif;
+    background-color: #f4f6f8;
+    min-width: 320px;
+  }
+
+
+  h1, h2, h3, h4, h5, h6, p{
+    margin: 0;
+  }
+  ul, ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  p > a {
+      color: #fff;
+      transition: all 0.3s linear;
+  }
+
+  p > a:hover {
+    color: #0b3df7;
+  }
+
+  a{
+    color: #111;
+  }
+  a, a:hover{
+    text-decoration: none;
+  }
+  img{
+    max-width: 100%;
+  }
+  input, textarea, button{
+    outline: none;
+    border: none;
+  }
+  textarea{
+    resize: vertical;
+  }
+  button{
+    cursor: pointer;
+  }
+  label{
+    margin-bottom: 0;
+  }
+  select, select:hover{
+    color: inherit;
+    background: #fff;
+  }
+  option, option:hover{
+    color: inherit;
+    background: #fff;
+  }
+  ::-webkit-input-placeholder {-webkit-transition: all .3s linear;transition: all .3s linear;   color: black;}
+  ::-moz-placeholder          {-webkit-transition: all .3s linear;transition: all .3s linear;   color: black;}
+  :-moz-placeholder           {-webkit-transition: all .3s linear;transition: all .3s linear;   color: black;}
+  :-ms-input-placeholder      {-webkit-transition: all .3s linear;transition: all .3s linear;   color: black;}
+  :focus::-webkit-input-placeholder {color: rgba(255, 255, 255, .8);}
+  :focus::-moz-placeholder          {color: rgba(255, 255, 255, .8);}
+  :focus:-moz-placeholder           {color: rgba(255, 255, 255, .8);}
+  :focus:-ms-input-placeholder      {color: rgba(255, 255, 255, .8);} */
+  /* RESET END */
+
+  span {
+    cursor: pointer;
+  }
+
+  textarea[name="textarea"] {
+    display: none;
+  }
+
+  .display {
+    display: inline-block;
+  }
