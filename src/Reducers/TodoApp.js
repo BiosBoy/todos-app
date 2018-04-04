@@ -1,17 +1,10 @@
-import { combineReducers } from 'redux'
 import {ADD_TODO, 
         FORK_TODO, 
-        ADDED_BUTTON, 
-        TOGGLE_BUTTON,
-        EDIT_TODO, 
         DELETE_TODO, 
         FILTER_TODO_UP, 
         FILTER_TODO_DOWN,
         CHANGE_STATUS,
-        FILTER_CHANGE,
-        VISIBLE_TODO_ALL,
-        VISIBLE_TODO_ACTIVE,
-        VISIBLE_TODO_DONED } from '../Variables/Variables'
+        FILTER_CHANGE } from '../Variables/Variables'
 
 const initialState = {
     iteams: {
@@ -55,7 +48,7 @@ function TodoApp(state, action) {
                 iteams: {
                     todos: [
                         ...state.iteams.todos.map(todo => {
-                            return (todo.id === parseInt(action.id) 
+                            return (todo.id === parseInt(action.id, 0) 
                                     && todo.text !== action.text) 
                                 ? {...state.iteams.todo, 
                                     id: todo.id,
@@ -66,7 +59,7 @@ function TodoApp(state, action) {
                     ],
                     buttons: [
                         ...state.iteams.buttons.map(button => {
-                            return (button.id === parseInt(action.id)) ?
+                            return (button.id === parseInt(action.id, 0)) ?
                                 {...state.iteams.button, 
                                     id: button.id,
                                     done: !button.done,
@@ -83,10 +76,10 @@ function TodoApp(state, action) {
             return Object.assign({}, {
                 iteams: {
                     todos: state.iteams.todos.filter(iteam => 
-                        iteam.id !== parseInt(action.id)
+                        iteam.id !== parseInt(action.id, 0)
                     ),
                     buttons: state.iteams.buttons.filter(button => 
-                        button.id !== parseInt(action.id)
+                        button.id !== parseInt(action.id, 0)
                     )
                 }
             });
@@ -121,7 +114,7 @@ function TodoApp(state, action) {
                 iteams: {
                     todos: [
                         ...state.iteams.todos.map(todo => {
-                            return (todo.id === parseInt(action.id) 
+                            return (todo.id === parseInt(action.id, 0) 
                                     && todo.status !== action.status) 
                                 ? {...state.iteams.todo, 
                                     id: todo.id,
@@ -132,7 +125,7 @@ function TodoApp(state, action) {
                     ],
                     buttons: [
                         ...state.iteams.buttons.map(button => {
-                            return (button.id === parseInt(action.id) 
+                            return (button.id === parseInt(action.id, 0) 
                                     && button.status !== action.status) ?
                                 {...state.iteams.button, 
                                     id: button.id,

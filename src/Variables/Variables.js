@@ -1,10 +1,7 @@
 export const ADD_TODO = "ADD_TODO";
-export const ADDED_BUTTON = "ADDED_BUTTON";
-export const EDIT_TODO = "DELETE_TODO";
 export const DELETE_TODO = "DELETE_TODO";
 export const FILTER_TODO_UP = "FILTER_TODO_UP";
 export const FILTER_TODO_DOWN = "FILTER_TODO_DOWN";
-export const TOGGLE_BUTTON = "TOGGLE_BUTTON";
 
 export const FORK_TODO = "FORK_TODO";
 export const CHANGE_STATUS= "CHANGE_STATUS";
@@ -14,5 +11,3 @@ export const VISIBLE_TODO_ALL = "VISIBLE_TODO_ALL";
 export const VISIBLE_TODO_ACTIVE = "VISIBLE_TODO_ACTIVE";
 export const VISIBLE_TODO_DONED = "VISIBLE_TODO_DONED";
 export const VISIBLE_TODO_SEARCH = "VISIBLE_TODO_SEARCH";
-
-

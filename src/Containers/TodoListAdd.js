@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import TodoList from '../Components/TodoList/TodoList';
 import { VISIBLE_TODO_ALL, VISIBLE_TODO_ACTIVE, VISIBLE_TODO_DONED, VISIBLE_TODO_SEARCH } from '../Variables/Variables'
-import { DeleteTodo, EditTodo, ChangeStatus, VisibleTodoAll, VisibleTodoActive, VisibleTodoDoned } from '../Actions/AddTodo'
+import { DeleteTodo, EditTodo, ChangeStatus } from '../Actions/AddTodo'
 
 const getVisibleIteams = (state, value, filter) => {
     switch (filter) {

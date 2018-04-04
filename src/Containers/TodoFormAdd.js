@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { AddTodo, FilterTodoUp, FilterTodoDown } from '../Actions/AddTodo'
+import { AddTodo } from '../Actions/AddTodo'
 import TodoForm from '../Components/TodoForm/TodoForm'
 
 const mapPropsToDispatch = dispatch => {
@@ -8,4 +8,6 @@ const mapPropsToDispatch = dispatch => {
     }
 }
 
-export default connect(null, mapPropsToDispatch)(TodoForm);
+export default connect(
+    null, 
+    mapPropsToDispatch)(TodoForm);

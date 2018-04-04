@@ -1,7 +1,4 @@
 import {ADD_TODO, 
-        ADDED_BUTTON, 
-        TOGGLE_BUTTON, 
-        EDIT_TODO, 
         DELETE_TODO, 
         FILTER_TODO_UP, 
         FILTER_TODO_DOWN, 
@@ -23,22 +20,6 @@ function AddTodo(text) {
         done: false
     }
 };
-
-function AddedButton(id, text) {
-    return {
-        type: ADDED_BUTTON,
-        id: nextTodoId++,
-        text
-    }
-};
-
-function ToggleButton(id, text) {
-    return {
-        type: TOGGLE_BUTTON,
-        text
-    }
-};
-
 
 function EditTodo(id, text, value, filter) {
     return {
@@ -116,8 +97,6 @@ export {AddTodo,
         DeleteTodo, 
         FilterTodoUp, 
         FilterTodoDown, 
-        AddedButton, 
-        ToggleButton, 
         ChangeStatus,
         FilterChange,
         VisibleTodoAll, 
