@@ -1,12 +1,16 @@
 import { connect } from 'react-redux';
-import { FilterTodoUp, FilterTodoDown } from '../Actions/AddTodo'
+import { FilterChange } from '../Actions/AddTodo'
 import TodoSort from '../Components/TodoSort/TodoSort'
 
-const mapDispatchToProps = dispatch => ({
-    todoFilterUp: () => dispatch(FilterTodoUp()),
-    todoFilterDown: () => dispatch(FilterTodoDown())
-  });
+const mapStatetoProps = state => ({
+  value: state.value,
+  tempFilter: state.tempFilter
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  onClick: (value, status, tempFilter) => dispatch(FilterChange(value, status, tempFilter))
+});
 
 export default connect(
-  null,
+  mapStatetoProps,
   mapDispatchToProps)(TodoSort);

@@ -10,11 +10,11 @@ class TodoForm extends React.Component{
     render() {
         return (
                 <form id="tp" onSubmit={this.handleSubmit} 
-                    className="input-group mb-3"
+                    className="input-group mb-3 mt-2"
                 >
-                    <input type="text" placeholder="Your text" class="form-control"/>
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-outline-secondary">Add todos</button>
+                    <input type="text" placeholder="Your text" className="form-control"/>
+                    <div className="input-group-append">
+                        <button type="submit" className="btn btn-primary">Add your task</button>
                     </div>
                 </form>
         );  

@@ -84,3 +84,9 @@
   .display {
     display: inline-block;
   }
+
+  div[class*="footer"] p{
+    line-height: 0.7;
+    color: grey;
+    font-size: 12px;
+  }

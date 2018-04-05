@@ -7,7 +7,8 @@ import {ADD_TODO,
         FILTER_CHANGE,
         VISIBLE_TODO_ALL,
         VISIBLE_TODO_ACTIVE,
-        VISIBLE_TODO_DONED } from '../Variables/Variables'
+        VISIBLE_TODO_DONED,
+        DOWNLOAD_TODOS } from '../Variables/Variables'
 
 let nextTodoId = 0;
 
@@ -38,19 +39,22 @@ function DeleteTodo(id) {
     }
 };
 
-function FilterTodoUp(id) {
+function FilterTodoUp(filter) {
     return {
-        type: FILTER_TODO_UP
+        type: FILTER_TODO_UP,
+        filter
     }
 };
 
-function FilterTodoDown(id) {
+function FilterTodoDown(filter) {
     return {
-        type: FILTER_TODO_DOWN
+        type: FILTER_TODO_DOWN,
+        filter
     }
 };
 
 function ChangeStatus(id, status, value, filter) {
+    console.log('ChangeStatus Action', status);
     return {
         type: CHANGE_STATUS,
         id,
@@ -60,11 +64,12 @@ function ChangeStatus(id, status, value, filter) {
     }
 }
 
-function FilterChange(value, filter) {
+function FilterChange(value, filter, tempFilter) {
     return {
         type: FILTER_CHANGE,
         value,
-        filter
+        filter,
+        tempFilter
     }
 }
 
@@ -92,6 +97,12 @@ function VisibleTodoDoned(id, filter) {
     }
 };
 
+function TodoSaver() {
+    return {
+        type: DOWNLOAD_TODOS
+    }
+};
+
 export {AddTodo,
         EditTodo, 
         DeleteTodo, 
@@ -101,4 +112,5 @@ export {AddTodo,
         FilterChange,
         VisibleTodoAll, 
         VisibleTodoActive, 
-        VisibleTodoDoned}
+        VisibleTodoDoned,
+        TodoSaver}

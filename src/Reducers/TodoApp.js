@@ -1,10 +1,9 @@
 import {ADD_TODO, 
         FORK_TODO, 
         DELETE_TODO, 
-        FILTER_TODO_UP, 
-        FILTER_TODO_DOWN,
         CHANGE_STATUS,
-        FILTER_CHANGE } from '../Variables/Variables'
+        FILTER_CHANGE,
+        DOWNLOAD_TODOS } from '../Variables/Variables'
 
 const initialState = {
     iteams: {
@@ -12,7 +11,8 @@ const initialState = {
         buttons:[]
     },
     value: '',
-    filter: ''
+    filter: '',
+    tempFilter: ''
 }
 
 function TodoApp(state, action) {
@@ -28,7 +28,7 @@ function TodoApp(state, action) {
                         ...state.iteams.todos, 
                         {
                             id: action.id,
-                            text: action.text + '___' + action.id,
+                            text: action.id + '. ' + action.text,
                             status: action.status
                         }
                     ],
@@ -41,7 +41,10 @@ function TodoApp(state, action) {
                             status: action.status
                         }
                     ]
-                }
+                },
+                value: '',
+                filter: 'all',
+                tempFilter: ''
             });
         case FORK_TODO:
             return {
@@ -70,7 +73,8 @@ function TodoApp(state, action) {
                     ]
                 },
                 value: action.value,
-                filter: action.filter
+                filter: action.filter,
+                tempFilter: action.tempFilter
             }; 
         case DELETE_TODO:
             return Object.assign({}, {
@@ -81,32 +85,6 @@ function TodoApp(state, action) {
                     buttons: state.iteams.buttons.filter(button => 
                         button.id !== parseInt(action.id, 0)
                     )
-                }
-            });
-        case FILTER_TODO_UP:
-            return Object.assign({}, state, {
-                iteams: {
-                    todos: [
-                        ...state.iteams.todos.sort((a, b) => 
-                        a.id - b.id
-                    )],
-                    buttons: [
-                        ...state.iteams.buttons.sort((a, b) => 
-                        a.id - b.id
-                    )]
-                }
-            });
-        case FILTER_TODO_DOWN:
-            return Object.assign({}, {
-                iteams: {
-                    todos: [
-                        ...state.iteams.todos.sort((a, b) => 
-                        b.id - a.id
-                    )],
-                    buttons: [
-                        ...state.iteams.buttons.sort((a, b) => 
-                        b.id - a.id
-                    )]
                 }
             });
         case CHANGE_STATUS:
@@ -137,9 +115,11 @@ function TodoApp(state, action) {
                     ]
                 }, 
                 value: action.value,
-                filter: action.filter
+                filter: action.filter,
+                tempFilter: action.tempFilter
             };
         case FILTER_CHANGE:
+            console.log('FILTER_CHANGE Reducer', action.tempFilter);
             return {
                 iteams: {
                     todos: [
@@ -150,8 +130,11 @@ function TodoApp(state, action) {
                     ]
                 }, 
                 value: action.value,
-                filter: action.filter
+                filter: action.filter,
+                tempFilter: action.tempFilter
             };
+        case DOWNLOAD_TODOS:
+            return state;
         default: 
             return state;
     }
