@@ -10,7 +10,6 @@ import preventclicks from '../Modules/PreventClicks'
 
 class App extends React.Component {
     handleUpdate = (buttonCount) => {
-        console.log(buttonCount);
         preventclicks(buttonCount);
     }
 

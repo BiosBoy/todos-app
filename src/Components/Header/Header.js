@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react'
+import DOMClassNames from '../../Variables/DOMClassNames'
 
 class Header extends React.Component {
     render() {
         return (
             <Fragment>
-                <div className="header col text-center justify-content-center mb-5 mt-5">
+                <div className={DOMClassNames().todosHeader}>
                     <h1>Simple Todo App</h1>
                     <h2> --- never miss your tasks ---</h2> 
                     

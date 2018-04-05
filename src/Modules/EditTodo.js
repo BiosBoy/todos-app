@@ -1,10 +1,20 @@
-let EditTodo = (state, closestEdit, index, status, todoFormEdit, todoFormChangeStatus) => {
+import DOMVariables from '../Variables/DOMVariables'
+import DOMClassNames from '../Variables/DOMClassNames'
+
+let EditTodo = (state, closestEdit, index, status, 
+                todoFormEdit, todoFormChangeStatus) => {
     this.closestEdit = closestEdit;
     this.index = index;
     this.status = status;
 
+    let p = DOMVariables(this.closestEdit).closestEdit();
+    let time = DOMVariables(this.closestEdit).closestEditTime();
+    let parent = DOMVariables(this.closestEdit).closestEditParent();
+    let text = DOMVariables(this.closestEdit).closestEditText();
+    let textarea = DOMVariables(this.closestEdit).closestEditTextarea();
+    let dateOptions = {hour: '2-digit', minute: '2-digit', second: '2-digit'};
+
     if (this.closestEdit.innerHTML === 'Edit') {
-        let p = this.closestEdit.previousElementSibling.previousElementSibling;
         p.className = '';
         p.style.display = "none";
 
@@ -12,23 +22,24 @@ let EditTodo = (state, closestEdit, index, status, todoFormEdit, todoFormChangeS
 
         let textarea = document.createElement('textarea');
         textarea.value = p.innerHTML;
-        textarea.className = 'd-flex align-items-center';
-        textarea.style.cssText = ' width: 52%; height: 38px; padding: .375rem 1.35rem; font-size: 1rem; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border: 1px solid #ced4da; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;';
-        closestEdit.parentNode.insertBefore(textarea, this.closestEdit.previousElementSibling);
+
+        time.innerHTML = new Date().toLocaleString('ru', dateOptions);
+
+        textarea.className = DOMClassNames().closestEditTextarea;
+        parent.insertBefore(textarea, time);
     } else if (this.closestEdit.innerHTML === 'Done') {
-        let status = this.closestEdit.parentNode.getAttribute('status');
+        let status = parent.getAttribute('status');
 
         if (status === 'done') {
             todoFormChangeStatus(this.index, 'active', state.value, state.filter);
         }
 
-        let textarea = this.closestEdit.previousElementSibling.previousElementSibling;
-        let p = this.closestEdit.previousElementSibling.previousElementSibling.previousElementSibling;
+        text.className = DOMClassNames().todoText;
+        text.innerHTML = textarea.value;
         textarea.remove();
-        p.style.display = "inline-block";
-        p.className ="d-flex align-items-center col col-lg-6";
 
-        todoFormEdit(this.index, textarea.value, state.value, state.filter);
+        let newTime = new Date().toLocaleString('ru', dateOptions);
+        todoFormEdit(this.index, textarea.value, newTime, state.value, state.filter);
     }
 }
 

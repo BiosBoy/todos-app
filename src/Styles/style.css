@@ -1,80 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
-
-/* RESET START */
-/* *{
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+  html, body {
+    min-width: 500px;
   }
-  body{
-    height:100%;
-    margin: 0;
-    color: #111;
-    font-family: 'Raleway', sans-serif;
-    background-color: #f4f6f8;
-    min-width: 320px;
+  div[class*="footer"] p{
+    line-height: 1.7;
+    color: grey;
+    font-size: 12px;
   }
-
-
-  h1, h2, h3, h4, h5, h6, p{
-    margin: 0;
-  }
-  ul, ol{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  p > a {
-      color: #fff;
-      transition: all 0.3s linear;
-  }
-
-  p > a:hover {
-    color: #0b3df7;
-  }
-
-  a{
-    color: #111;
-  }
-  a, a:hover{
-    text-decoration: none;
-  }
-  img{
-    max-width: 100%;
-  }
-  input, textarea, button{
-    outline: none;
-    border: none;
-  }
-  textarea{
-    resize: vertical;
-  }
-  button{
-    cursor: pointer;
-  }
-  label{
-    margin-bottom: 0;
-  }
-  select, select:hover{
-    color: inherit;
-    background: #fff;
-  }
-  option, option:hover{
-    color: inherit;
-    background: #fff;
-  }
-  ::-webkit-input-placeholder {-webkit-transition: all .3s linear;transition: all .3s linear;   color: black;}
-  ::-moz-placeholder          {-webkit-transition: all .3s linear;transition: all .3s linear;   color: black;}
-  :-moz-placeholder           {-webkit-transition: all .3s linear;transition: all .3s linear;   color: black;}
-  :-ms-input-placeholder      {-webkit-transition: all .3s linear;transition: all .3s linear;   color: black;}
-  :focus::-webkit-input-placeholder {color: rgba(255, 255, 255, .8);}
-  :focus::-moz-placeholder          {color: rgba(255, 255, 255, .8);}
-  :focus:-moz-placeholder           {color: rgba(255, 255, 255, .8);}
-  :focus:-ms-input-placeholder      {color: rgba(255, 255, 255, .8);} */
-  /* RESET END */
 
   span {
     cursor: pointer;
+  }
+
+  span[name="status"] {
+    cursor: pointer;
+    display:inline-block;
+    padding: 0px 20px 0px 20px;
+  }
+
+  span[name="delete"] {
+    cursor: pointer;
+    display:inline-block; 
+    padding: 0px 20px 0px 20px; 
+    font-weight: bold;
   }
 
   textarea[name="textarea"] {
@@ -85,8 +33,75 @@
     display: inline-block;
   }
 
-  div[class*="footer"] p{
-    line-height: 0.7;
-    color: grey;
-    font-size: 12px;
+  .textId, .text, .textTime {
+    margin: 0;
+    word-break: break-word;
+  }
+
+  .textarea {
+    display: inline-block;
+    width: 34%; 
+    height: 38px; 
+    padding: .375rem 1.35rem; 
+    font-size: 1rem; 
+    line-height: 1.5; 
+    color: #495057; 
+    background-color: #fff; 
+    background-clip: padding-box; 
+    border: 1px solid #ced4da; 
+    border-radius: .25rem; 
+    transition: border-color .15s ease-in-out, 
+                box-shadow .15s ease-in-out;
+  }
+
+  .footer p {
+    margin: 0;
+    margin-left: 9px;
+  }
+  
+  .save p {
+    margin: 0; 
+    margin-left: 9px;
+  }
+
+  .warn {
+    width: 199px;
+    height: 50px;
+    position: absolute;
+    background: #92e5f3;
+    border: 1px solid #92e5f3;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 2px 6px #111;
+    box-shadow: 1px 1px 5px #111;
+    word-break: break-word;
+    color: #f30404;
+    font-weight: 600;
+    z-index: 10000;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .warn::after {
+    content: '\25BC';
+    position: absolute;
+    display: block;
+    width: 100px;
+    top: 42px;
+    left: 290px;
+    text-shadow: 0px 2px 0.5px #5d5d5d;
+    -webkit-transform: scaleX(1.5);
+    -moz-transform: scaleX(1.5);
+    -o-transform: scaleX(1.5);
+    transform: scaleX(5.5);
+    color: #92e5f3;
+  }
+
+  .warn > p {
+    word-break: break-word;
+    margin: 0;
+    text-align: center;
   }

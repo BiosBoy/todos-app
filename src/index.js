@@ -9,8 +9,6 @@ import './Styles/style.css';
 
 const store = createStore(TodoApp);
 
-console.log(store.getState());
-
 ReactDOM.render(
     <Provider store={store}>
         <App />

@@ -1,5 +1,8 @@
+import PreventClicWarning from './PreventClicWarning'
+
 let preventclicks = (buttonCount) => {
     document.documentElement.onclick = null;
+    PreventClicWarning().warnRemove();
 
     buttonCount.forEach(button => {
         if (button.done === true) {
@@ -8,6 +11,8 @@ let preventclicks = (buttonCount) => {
                 let closest = target.closest('button[name=clicked]');
 
                 if (!closest) {
+                    PreventClicWarning().warnAdd();
+
                     e.preventDefault(); 
                     e.stopPropagation(); 
                     return false

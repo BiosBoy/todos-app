@@ -2,7 +2,9 @@ import { saveAs } from 'file-saver'
 
 let TodoSaver = (save) => {
     let makeTxtSave = (save) => {
-        let arr = ['This your own todos list on the day, don\'t forgot it! ;)', '\n N Task Status'];
+        let arr = ['This your own todos list on the day, don\'t forgot it! ;)', 
+                    '\n N Task Status'];
+                    
         save.iteams.todos.forEach(todo => {
             arr.push(todo.text + ' ' + todo.status)
         });

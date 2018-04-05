@@ -1,5 +1,6 @@
 import React from 'react';
 import addTodo from '../../Modules/AddTodo'
+import DOMClassNames from '../../Variables/DOMClassNames'
 
 class TodoForm extends React.Component{   
     handleSubmit = (e) => {
@@ -9,12 +10,10 @@ class TodoForm extends React.Component{
 
     render() {
         return (
-                <form id="tp" onSubmit={this.handleSubmit} 
-                    className="input-group mb-3 mt-2"
-                >
-                    <input type="text" placeholder="Your text" className="form-control"/>
-                    <div className="input-group-append">
-                        <button type="submit" className="btn btn-primary">Add your task</button>
+                <form id="tp" onSubmit={this.handleSubmit} className={DOMClassNames().todoForm}>
+                    <input type="text" placeholder="Your text" className={DOMClassNames().todoForminput}/>
+                    <div className={DOMClassNames().todoFormButtonContainer}>
+                        <button type="submit" className={DOMClassNames().todoFormButton}>Add your task</button>
                     </div>
                 </form>
         );  

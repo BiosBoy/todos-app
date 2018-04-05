@@ -12,7 +12,7 @@ const initialState = {
     },
     value: '',
     filter: '',
-    tempFilter: ''
+    tempFilter: 'all'
 }
 
 function TodoApp(state, action) {
@@ -28,8 +28,9 @@ function TodoApp(state, action) {
                         ...state.iteams.todos, 
                         {
                             id: action.id,
-                            text: action.id + '. ' + action.text,
-                            status: action.status
+                            text: action.text,
+                            status: action.status,
+                            timestamp: action.timestamp
                         }
                     ],
                     buttons: [
@@ -37,16 +38,17 @@ function TodoApp(state, action) {
                         {
                             id: action.id,
                             done: false,
-                            text: action.text + '___' + action.id,
+                            text: action.text,
                             status: action.status
                         }
                     ]
                 },
                 value: '',
                 filter: 'all',
-                tempFilter: ''
+                tempFilter: 'all'
             });
         case FORK_TODO:
+            console.log('FORK_TODO Action', action.newTime);
             return {
                 iteams: {
                     todos: [
@@ -56,7 +58,8 @@ function TodoApp(state, action) {
                                 ? {...state.iteams.todo, 
                                     id: todo.id,
                                     text: action.text,
-                                    status: todo.status
+                                    status: todo.status,
+                                    timestamp: action.newTime
                                 } : todo
                             })
                     ],
@@ -97,7 +100,8 @@ function TodoApp(state, action) {
                                 ? {...state.iteams.todo, 
                                     id: todo.id,
                                     text: todo.text,
-                                    status: action.status
+                                    status: action.status,
+                                    timestamp: todo.timestamp
                                 } : todo
                             })
                     ],
@@ -119,7 +123,6 @@ function TodoApp(state, action) {
                 tempFilter: action.tempFilter
             };
         case FILTER_CHANGE:
-            console.log('FILTER_CHANGE Reducer', action.tempFilter);
             return {
                 iteams: {
                     todos: [

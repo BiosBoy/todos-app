@@ -18,15 +18,21 @@ function AddTodo(text) {
         id: nextTodoId++,
         text,
         status: 'active',
-        done: false
+        done: false,
+        timestamp: new Date().toLocaleString('ru', {
+                                                    hour: '2-digit', 
+                                                    minute: '2-digit', 
+                                                    second: '2-digit'})
     }
 };
 
-function EditTodo(id, text, value, filter) {
+function EditTodo(id, text, newTime, value, filter) {
+    console.log('EditTodo Action', newTime);
     return {
         type: FORK_TODO,
         id,
         text,
+        newTime,
         value,
         filter
     }
@@ -54,7 +60,7 @@ function FilterTodoDown(filter) {
 };
 
 function ChangeStatus(id, status, value, filter) {
-    console.log('ChangeStatus Action', status);
+    console.log('ChangeStatus Action', id, status);
     return {
         type: CHANGE_STATUS,
         id,
