@@ -18,3 +18,8 @@ Simple :speech_balloon: Todos App based on React and Redux and styled on :heart_
  - Improved stability;
  - Bug fixes;
  - Bootstrap 4 styling.
+
+# 1.0
+ - Added stability;
+ - Bug fixes;
+ - More beautiful design;
