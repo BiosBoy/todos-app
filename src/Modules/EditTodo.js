@@ -27,6 +27,7 @@ let EditTodo = (state, closestEdit, index, status,
 
         textarea.className = DOMClassNames().closestEditTextarea;
         parent.insertBefore(textarea, time);
+        textarea.focus();
     } else if (this.closestEdit.innerHTML === 'Done') {
         let status = parent.getAttribute('status');
 
