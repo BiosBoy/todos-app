@@ -53,13 +53,13 @@ const getVisibleIteams = (state, value, filter, tempFilter) => {
                     todos: state.iteams.todos.filter(iteam => {
                         return tempFilter === 'done' ? iteam.text.match(value) && iteam.status === 'done' 
                             : tempFilter === 'active' ? iteam.text.match(value) && iteam.status === 'active'
-                            : tempFilter === 'all' ? iteam.text.match(value) && iteam.status === 'all'
+                            : tempFilter === 'all' ? iteam.text.match(value) && iteam.status === 'active' || iteam.status === 'done'
                             : iteam.text.match(value)
                     }),
                     buttons: state.iteams.buttons.filter(button => {
                         return tempFilter === 'done' ? button.text.match(value) && button.status === 'done' 
                             : tempFilter === 'active' ? button.text.match(value) && button.status === 'active'
-                            : tempFilter === 'all' ? button.text.match(value) && button.status === 'all'
+                            : tempFilter === 'all' ? button.text.match(value) && button.status === 'active' || button.status === 'done' 
                             : button.text.match(value)
                     })
                 },

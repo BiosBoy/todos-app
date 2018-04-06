@@ -21,10 +21,10 @@ let DOMClassNames = () => {
         todoFormButtonContainer: "input-group-append",
         todoFormButton: "btn btn-primary",
         todosFilterContainer: "row justify-content-center mb-3",
-        todosFilterAll: 'btn btn-outline-info ml-1 mr-1',
-        todosFilterActive: 'btn btn-outline-info ml-1 mr-1',
-        todosFilterDoned: 'btn btn-outline-info ml-1 mr-1',
-        todosFilterSearch: "form-control col-lg-2 ml-1 mr-1",
+        todosFilterAll: 'btn btn-outline-info mr-1',
+        todosFilterActive: 'btn btn-outline-info ml-2 mr-2',
+        todosFilterDoned: 'btn btn-outline-info ml-1',
+        todosFilterSearch: "form-control col-lg-9 mt-3",
         todosHeader: "header col text-center justify-content-center mb-5 mt-5",
         todosFooter: "footer footer col text-center justify-content-center mb-3 mt-5"
     }

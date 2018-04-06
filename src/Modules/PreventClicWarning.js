@@ -5,7 +5,7 @@ let PreventClicWarning = () => {
             warn.className = 'warn';
             let warnText = document.createElement('p');
             warnText.innerHTML = 'You must save your edit firstly.';
-            warn.append(warnText);
+            warn.appendChild(warnText);
 
             let button = document.querySelector('button[name=clicked]');
             let buttonCoordLeft = button.getBoundingClientRect().left 
@@ -20,7 +20,7 @@ let PreventClicWarning = () => {
             let buttonParent = button.parentNode;
 
             if (!document.querySelector('.warn')) {
-                document.body.append(warn);
+                document.body.appendChild(warn);
             }
         },
         warnRemove: () => {

@@ -12,7 +12,7 @@ class TodoFilter extends React.Component {
                 <button onClick={(e) => {this.props.onClick('', e.target.name, 'done')}} 
                     name={'VISIBLE_TODO_DONED'} className={DOMClassNames().todosFilterDoned}>View Completed</button>
                 <input onChange={(e) => {this.props.onClick(e.target.value, e.target.name, this.props.tempFilter), console.log('this.props.tempFilter', this.props.tempFilter)}}
-                    name={'VISIBLE_TODO_SEARCH'} type="text" placeholder='Search...' className={DOMClassNames().todosFilterSearch}/>
+                    name={'VISIBLE_TODO_SEARCH'} type="text" placeholder='Type to search todo...' className={DOMClassNames().todosFilterSearch}/>
             </div>
         )
     }
