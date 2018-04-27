@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoIteam from '../TodoIteam/TodoIteam'
+import Chart from './../Chart/Chart'
 import editTodosList from '../../Modules/EditTodosList'
 import DOMClassNames from '../../Variables/DOMClassNames'
 
@@ -30,6 +31,7 @@ class TodoList extends React.Component {
                                     {...iteam} 
                                 />
                     })}
+                    <Chart state={this.props.state} />
                 </div>
         );
     }
